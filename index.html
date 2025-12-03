@@ -1,4 +1,4 @@
-1<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -34,7 +34,6 @@
       line-height:1.45;
     }
 
-    /* skip link for keyboard users */
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:10px;top:10px;width:auto;height:auto;padding:8px 12px;background:#000;color:#fff;border-radius:6px;text-decoration:none}
 
@@ -43,7 +42,6 @@
       position:relative;
     }
 
-    /* PROFILE IMAGE */
     .profile-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:900px;margin:auto}
     .profile-img{
       width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.12);
@@ -60,7 +58,6 @@
 
     header p{margin:6px 0 0;font-weight:500;opacity:0.95}
 
-    /* THEME BUTTON */
     .top-controls{position:fixed;right:18px;bottom:18px;z-index:120}
     .theme-btn{
       background:linear-gradient(90deg,#ffffff22,#ffffff11);border:none;padding:10px 14px;border-radius:12px;color:var(--text);
@@ -68,13 +65,11 @@
     }
     .theme-btn:focus{outline:none;box-shadow:var(--focus)}
 
-    /* MAIN CONTAINER */
     .container{width:92%;max-width:1100px;margin:32px auto;padding-bottom:60px}
 
     h2{font-size:28px;text-align:center;margin:12px 0 6px;color:var(--muted)}
     .line{width:84px;height:4px;background:linear-gradient(90deg,#4a6cf7,#7b5af0);margin:10px auto 28px;border-radius:8px}
 
-    /* GRID */
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
 
     .card{
@@ -93,10 +88,8 @@
     .btn.secondary{background:transparent;border:1.5px solid rgba(255,255,255,0.06);color:var(--text);font-weight:600}
     .btn:focus{outline:none;box-shadow:var(--focus)}
 
-    /* PROJECT CARD extras */
     .card .meta{font-size:13px;opacity:0.7;margin-bottom:10px}
 
-    /* CONTACT */
     .contact-wrap{display:flex;gap:24px;flex-wrap:wrap;align-items:stretch}
     .contact-left{flex:1;min-width:260px}
     .contact-right{flex:1;min-width:260px}
@@ -106,17 +99,14 @@
     .contact-form textarea{min-height:120px;resize:vertical}
     .contact-form label{display:block;margin:8px 0 6px;font-weight:600;color:var(--muted);font-size:13px}
 
-    /* FOOTER */
     footer{padding:24px;text-align:center;color:rgba(255,255,255,0.65);margin-top:34px}
 
-    /* MODAL */
     .modal-back{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;place-items:center;z-index:200}
     .modal{background:var(--card);padding:20px;border-radius:12px;width:92%;max-width:680px;color:var(--text);box-shadow:var(--shadow)}
     .modal h3{margin:0 0 8px}
     .modal p{margin:0 0 12px}
     .modal .close{float:right;background:transparent;border:none;color:var(--muted);font-weight:700;cursor:pointer}
 
-    /* responsive tweaks */
     @media (max-width:720px){
       .typewriter{font-size:26px}
       header{padding:40px 16px 28px}
@@ -124,7 +114,6 @@
       .top-controls{right:12px;bottom:12px}
     }
 
-    /* focus visible */
     :focus{outline:none}
     :focus-visible{outline:var(--focus);border-radius:8px}
   </style>
@@ -155,9 +144,9 @@
       <article class="card" tabindex="0" aria-labelledby="p1title">
         <h3 id="p1title">Projeto 1 — Programa Agrinho</h3>
         <div class="meta">HTML • CSS • JavaScript</div>
-        <p>Um site educativo criado como trabalho prático.</p>
+        <p>Uma página criada para demonstrar manipulação básica do DOM, eventos e responsividade.</p>
         <div style="display:flex;gap:10px;justify-content:center">
-          <a class="btn" href="https://jhbbueubvevbvbrvbuvbr.github.io/Programa-Agrinho/" target="_blank" rel="noopener">Abrir site</a>
+          <a class="btn" href="https://jhbbueubvevbvbrvbuvbr.github.io/Programa-Agrinho/" target="_blank" rel="noopener">Ver projeto</a>
         </div>
       </article>
 
@@ -165,9 +154,9 @@
       <article class="card" tabindex="0" aria-labelledby="p2title">
         <h3 id="p2title">Projeto 2 — Gerador de Senha</h3>
         <div class="meta">HTML • CSS • JavaScript</div>
-        <p>Um gerador de senhas seguras para estudo de lógica e interatividade.</p>
+        <p>Um gerador de senhas simples para demonstrar lógica de programação e interatividade.</p>
         <div style="display:flex;gap:10px;justify-content:center">
-          <a class="btn" href="https://jhbbueubvevbvbrvbuvbr.github.io/Gerador-de-Senha/" target="_blank" rel="noopener">Abrir site</a>
+          <a class="btn" href="https://jhbbueubvevbvbrvbuvbr.github.io/Gerador-de-Senha/" target="_blank" rel="noopener">Ver projeto</a>
         </div>
       </article>
     </section>
@@ -183,9 +172,15 @@
       </article>
 
       <article class="card" tabindex="0">
-        <h3>GitHub</h3>
+        <h3>GitHub — Conta 1</h3>
         <p>Meus códigos, repositórios e atividades de programação.</p>
-        <a class="btn" href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener">Abrir GitHub</a>
+        <a class="btn" href="https://github.com/hjhvhvvrygvyurg" target="_blank" rel="noopener">Abrir Conta 1</a>
+      </article>
+
+      <article class="card" tabindex="0">
+        <h3>GitHub — Conta 2</h3>
+        <p>Outra conta com projetos alternativos.</p>
+        <a class="btn" href="https://github.com/jhbbueubvevbvbrvbuvbr" target="_blank" rel="noopener">Abrir Conta 2</a>
       </article>
     </section>
 
@@ -198,7 +193,7 @@
         <p>Quer falar sobre o projeto, tirar dúvidas ou combinar treino de vôlei? Manda uma mensagem!</p>
         <p style="margin-top:10px;font-size:14px;opacity:0.85">Email público: <strong>guiandradesilva08@gmail.com</strong></p>
         <p style="font-size:13px;opacity:0.85">Ou clique no botão para abrir um email pronto:</p>
-        <a class="btn" href="mailto:guiandradesilva08@gmail.com?subject=Contato%20pelo%20Portf%C3%B3lio&body=Oi%20Guilherme%2C%0A%0A">Enviar email</a>
+        <a class="btn" href="mailto:guiandradesilva08@gmail.com?subject=Contato%20pelo%20Portfólio&body=Oi%20Guilherme%2C%0A%0A">Enviar email</a>
       </div>
 
       <div class="contact-right card contact-form" aria-hidden="false">
@@ -219,24 +214,11 @@
 
   </main>
 
-  <!-- MODAL -->
-  <div id="modalBack" class="modal-back" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal" role="document">
-      <button class="close" id="modalClose" aria-label="Fechar">✕</button>
-      <h3 id="modalTitle">Título</h3>
-      <p id="modalDesc">Descrição</p>
-      <div style="text-align:right;margin-top:12px">
-        <button id="modalClose2" class="btn secondary">Fechar</button>
-      </div>
-    </div>
-  </div>
-
   <footer>
     © 2025 • Guilherme • Trabalho de Matemática 2 — Programação
   </footer>
 
   <script>
-    // Theme toggle (persist with localStorage)
     const themeBtn = document.getElementById('themeBtn');
     const userPref = localStorage.getItem('theme');
     if(userPref === 'light') document.body.classList.add('light');
@@ -247,31 +229,6 @@
       themeBtn.setAttribute('aria-pressed', String(isLight));
     });
 
-    // Modal for project descriptions
-    const modalBack = document.getElementById('modalBack');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    document.querySelectorAll('[data-modal-title]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const t = e.currentTarget.getAttribute('data-modal-title') || 'Projeto';
-        const d = e.currentTarget.getAttribute('data-modal-desc') || 'Descrição não disponível.';
-        modalTitle.textContent = t;
-        modalDesc.textContent = d;
-        modalBack.style.display = 'grid';
-        modalBack.setAttribute('aria-hidden', 'false');
-        document.getElementById('modalClose').focus();
-      });
-    });
-    function closeModal(){
-      modalBack.style.display = 'none';
-      modalBack.setAttribute('aria-hidden','true');
-    }
-    document.getElementById('modalClose').addEventListener('click', closeModal);
-    document.getElementById('modalClose2').addEventListener('click', closeModal);
-    modalBack.addEventListener('click', (e)=>{ if(e.target === modalBack) closeModal(); });
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
-
-    // Contact form: fallback copy email and friendly submit handler
     const contactForm = document.getElementById('contactForm');
     const copyMail = document.getElementById('copyMail');
     copyMail.addEventListener('click', () => {
@@ -294,10 +251,6 @@
       const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
       window.location.href = mailto;
     });
-
-    document.addEventListener('keyup', (e) => {
-      if(e.key === 'Tab') document.body.classList.add('show-focus');
-    }, {once:true});
   </script>
 
 </body>

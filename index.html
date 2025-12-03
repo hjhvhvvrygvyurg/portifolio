@@ -1,139 +1,323 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio • Guilherme</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfólio • Guilherme</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f2f2f2;
-            color: #333;
-            line-height: 1.6;
-        }
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        header {
-            background: #4a6cf7;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
+  <style>
+    :root{
+      --bg:#0f0f17; --card:#14141a; --muted:#bfc6ff;
+      --accent:linear-gradient(90deg,#4a6cf7,#8739f9);
+      --glass: rgba(255,255,255,0.04);
+      --text:#ffffff;
+      --radius:14px;
+      --shadow: 0 8px 30px rgba(0,0,0,0.6);
+      --focus: 3px solid rgba(74,108,247,0.22);
+    }
+    body.light{
+      --bg:#f5f7fb; --card:#ffffff; --muted:#5560a8; --text:#0f1724;
+      --glass: rgba(0,0,0,0.04);
+      --shadow: 0 6px 18px rgba(17,24,39,0.06);
+      --focus: 3px solid rgba(74,108,247,0.14);
+    }
 
-        h1 {
-            margin: 0;
-            font-size: 32px;
-        }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;transition:background .35s,color .35s;
+      line-height:1.45;
+    }
 
-        h2 {
-            text-align: center;
-            margin-top: 40px;
-        }
+    /* skip link for keyboard users */
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:10px;top:10px;width:auto;height:auto;padding:8px 12px;background:#000;color:#fff;border-radius:6px;text-decoration:none}
 
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: auto;
-        }
+    header{
+      text-align:center;padding:60px 20px 40px;background:var(--accent);box-shadow:var(--shadow);
+      position:relative;
+    }
 
-        .projects, .social {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+    /* PROFILE IMAGE */
+    .profile-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:900px;margin:auto}
+    .profile-img{
+      width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.12);
+      box-shadow:0 8px 30px rgba(0,0,0,0.35)
+    }
+    .typewriter{
+      font-size:34px;font-weight:700;color:#fff;letter-spacing:0.2px;display:inline-block;
+      white-space:nowrap;overflow:hidden;border-right:3px solid rgba(255,255,255,0.9);
+      animation:typing 2.6s steps(24,end), blink .8s infinite;
+      max-width:100%;
+    }
+    @keyframes typing{from{width:0}to{width:22ch}}
+    @keyframes blink{50%{border-color:transparent}}
 
-        .card {
-            background: white;
-            padding: 20px;
-            width: 250px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
-        }
+    header p{margin:6px 0 0;font-weight:500;opacity:0.95}
 
-        .card a {
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            background: #4a6cf7;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+    /* THEME BUTTON */
+    .top-controls{position:fixed;right:18px;bottom:18px;z-index:120}
+    .theme-btn{
+      background:linear-gradient(90deg,#ffffff22,#ffffff11);border:none;padding:10px 14px;border-radius:12px;color:var(--text);
+      cursor:pointer;backdrop-filter:blur(6px);box-shadow:var(--shadow);font-weight:600;
+    }
+    .theme-btn:focus{outline:none;box-shadow:var(--focus)}
 
-        .card a:hover {
-            background: #2f4ddb;
-        }
+    /* MAIN CONTAINER */
+    .container{width:92%;max-width:1100px;margin:32px auto;padding-bottom:60px}
 
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            padding: 20px;
-            color: #777;
-        }
-    </style>
+    h2{font-size:28px;text-align:center;margin:12px 0 6px;color:var(--muted)}
+    .line{width:84px;height:4px;background:linear-gradient(90deg,#4a6cf7,#7b5af0);margin:10px auto 28px;border-radius:8px}
 
+    /* GRID */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);padding:20px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;
+    }
+    .card:focus-within, .card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(0,0,0,0.45)}
+    .card h3{margin:0 0 8px;color:var(--muted)}
+    .card p{margin:0 0 14px;opacity:0.9;font-size:15px}
+
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:10px;border:none;background:linear-gradient(90deg,#4a6cf7,#8739f9);
+      color:white;font-weight:700;text-decoration:none;cursor:pointer;
+    }
+    .btn.secondary{background:transparent;border:1.5px solid rgba(255,255,255,0.06);color:var(--text);font-weight:600}
+    .btn:focus{outline:none;box-shadow:var(--focus)}
+
+    /* PROJECT CARD extras */
+    .card .meta{font-size:13px;opacity:0.7;margin-bottom:10px}
+
+    /* CONTACT */
+    .contact-wrap{display:flex;gap:24px;flex-wrap:wrap;align-items:stretch}
+    .contact-left{flex:1;min-width:260px}
+    .contact-right{flex:1;min-width:260px}
+    .contact-form input,.contact-form textarea{
+      width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);
+    }
+    .contact-form textarea{min-height:120px;resize:vertical}
+    .contact-form label{display:block;margin:8px 0 6px;font-weight:600;color:var(--muted);font-size:13px}
+
+    /* FOOTER */
+    footer{padding:24px;text-align:center;color:rgba(255,255,255,0.65);margin-top:34px}
+
+    /* MODAL */
+    .modal-back{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;place-items:center;z-index:200}
+    .modal{background:var(--card);padding:20px;border-radius:12px;width:92%;max-width:680px;color:var(--text);box-shadow:var(--shadow)}
+    .modal h3{margin:0 0 8px}
+    .modal p{margin:0 0 12px}
+    .modal .close{float:right;background:transparent;border:none;color:var(--muted);font-weight:700;cursor:pointer}
+
+    /* responsive tweaks */
+    @media (max-width:720px){
+      .typewriter{font-size:26px}
+      header{padding:40px 16px 28px}
+      .profile-img{width:110px;height:110px}
+      .top-controls{right:12px;bottom:12px}
+    }
+
+    /* focus visible */
+    :focus{outline:none}
+    :focus-visible{outline:var(--focus);border-radius:8px}
+  </style>
 </head>
-
 <body>
 
-<header>
-    <h1>Meu Portfólio — Guilherme</h1>
-    <p>Trabalho para a disciplina de Matemática 2 (Programação)</p>
-</header>
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
 
-<div class="container">
+  <header role="banner" aria-label="Cabeçalho do portfólio">
+    <div class="profile-wrap">
+      <!-- imagem pública do Unsplash (pode trocar depois) -->
+      <img class="profile-img" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=600" alt="Foto de perfil estilo profissional">
+      <div class="typewriter" aria-live="polite">Guilherme • Portfólio</div>
+      <p>Trabalho da disciplina Matemática 2 — Programação • 2025</p>
+    </div>
+  </header>
+
+  <!-- botão alternar tema -->
+  <div class="top-controls" aria-hidden="false">
+    <button id="themeBtn" class="theme-btn" aria-pressed="false" title="Alternar tema">Alterar tema</button>
+  </div>
+
+  <main id="main" class="container" role="main">
 
     <h2>Projetos</h2>
+    <div class="line" aria-hidden="true"></div>
 
-    <div class="projects">
-
-        <div class="card">
-            <h3>Projeto 1</h3>
-            <p>Descrição rápida do projeto.</p>
-            <a href="#">Ver projeto</a>
+    <section class="grid" aria-label="Lista de projetos">
+      <!-- projeto 1 -->
+      <article class="card" tabindex="0" aria-labelledby="p1title">
+        <h3 id="p1title">Projeto 1 — Página Interativa</h3>
+        <div class="meta">HTML • CSS • JavaScript</div>
+        <p>Uma página criada para demonstrar manipulação básica do DOM, eventos e responsividade.</p>
+        <div style="display:flex;gap:10px;justify-content:center">
+          <!-- trocar href abaixo pelos links reais dos seus projetos no GitHub -->
+          <a class="btn" href="https://github.com/SEU_USUARIO/projeto1" target="_blank" rel="noopener">Ver no GitHub</a>
+          <button class="btn secondary" data-modal-title="Projeto 1" data-modal-desc="Descrição mais completa do Projeto 1: objetivos, tecnologias usadas e resultados.">Descrição</button>
         </div>
+      </article>
 
-        <div class="card">
-            <h3>Projeto 2</h3>
-            <p>Descrição rápida do projeto.</p>
-            <a href="#">Ver projeto</a>
+      <!-- projeto 2 -->
+      <article class="card" tabindex="0" aria-labelledby="p2title">
+        <h3 id="p2title">Projeto 2 — App Simples</h3>
+        <div class="meta">HTML • CSS</div>
+        <p>Projeto focado em layout e design responsivo, com componentes reaproveitáveis.</p>
+        <div style="display:flex;gap:10px;justify-content:center">
+          <a class="btn" href="https://github.com/SEU_USUARIO/projeto2" target="_blank" rel="noopener">Ver no GitHub</a>
+          <button class="btn secondary" data-modal-title="Projeto 2" data-modal-desc="Descrição mais completa do Projeto 2: interfaces, desafios e aprendizado.">Descrição</button>
         </div>
+      </article>
 
-        <div class="card">
-            <h3>Projeto 3</h3>
-            <p>Descrição rápida do projeto.</p>
-            <a href="#">Ver projeto</a>
+      <!-- projeto 3 -->
+      <article class="card" tabindex="0" aria-labelledby="p3title">
+        <h3 id="p3title">Projeto 3 — Mini Jogo</h3>
+        <div class="meta">JavaScript • Lógica</div>
+        <p>Um mini-jogo demonstrando lógica, eventos de teclado e manipulação de sprites.</p>
+        <div style="display:flex;gap:10px;justify-content:center">
+          <a class="btn" href="https://github.com/SEU_USUARIO/projeto3" target="_blank" rel="noopener">Ver no GitHub</a>
+          <button class="btn secondary" data-modal-title="Projeto 3" data-modal-desc="Descrição mais completa do Projeto 3: como funciona, estrutura e resultados.">Descrição</button>
         </div>
+      </article>
+    </section>
 
+    <h2 style="margin-top:44px">Minhas Redes</h2>
+    <div class="line" aria-hidden="true"></div>
+
+    <section class="grid" aria-label="Redes sociais">
+      <article class="card" tabindex="0">
+        <h3>Instagram</h3>
+        <p>@ws_guizinsx — posts sobre vôlei, projetos e dia a dia.</p>
+        <a class="btn" href="https://instagram.com/ws_guizinsx" target="_blank" rel="noopener">Abrir Instagram</a>
+      </article>
+
+      <article class="card" tabindex="0">
+        <h3>GitHub</h3>
+        <p>Meus códigos, repositórios e atividades de programação.</p>
+        <a class="btn" href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener">Abrir GitHub</a>
+      </article>
+    </section>
+
+    <h2 style="margin-top:44px">Contato</h2>
+    <div class="line" aria-hidden="true"></div>
+
+    <section class="contact-wrap" aria-label="Contato e formulário">
+      <div class="contact-left card">
+        <h3>Fale comigo</h3>
+        <p>Quer falar sobre o projeto, tirar dúvidas ou combinar treino de vôlei? Manda uma mensagem!</p>
+        <p style="margin-top:10px;font-size:14px;opacity:0.85">Email público (troque pelo seu): <strong>SEU_EMAIL_AQUI</strong></p>
+        <p style="font-size:13px;opacity:0.85">Ou clique no botão para abrir um email pronto:</p>
+        <a class="btn" href="mailto:SEU_EMAIL_AQUI?subject=Contato%20pelo%20Portf%C3%B3lio&body=Oi%20Guilherme%2C%0A%0A">Enviar email</a>
+      </div>
+
+      <div class="contact-right card contact-form" aria-hidden="false">
+        <form id="contactForm" action="mailto:SEU_EMAIL_AQUI" method="GET" enctype="text/plain" novalidate>
+          <label for="name">Seu nome</label>
+          <input id="name" name="name" type="text" placeholder="Seu nome" required>
+
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" placeholder="Escreva sua mensagem" required></textarea>
+
+          <div style="display:flex;gap:10px;margin-top:12px;justify-content:flex-end">
+            <button type="submit" class="btn">Enviar por email</button>
+            <button type="button" id="copyMail" class="btn secondary">Copiar email</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL -->
+  <div id="modalBack" class="modal-back" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <button class="close" id="modalClose" aria-label="Fechar">✕</button>
+      <h3 id="modalTitle">Título</h3>
+      <p id="modalDesc">Descrição</p>
+      <div style="text-align:right;margin-top:12px">
+        <button id="modalClose2" class="btn secondary">Fechar</button>
+      </div>
     </div>
+  </div>
 
-    <h2>Minhas Redes</h2>
+  <footer>
+    © 2025 • Guilherme • Trabalho de Matemática 2 — Programação
+  </footer>
 
-    <div class="social">
+  <script>
+    // Theme toggle (persist with localStorage)
+    const themeBtn = document.getElementById('themeBtn');
+    const userPref = localStorage.getItem('theme');
+    if(userPref === 'light') document.body.classList.add('light');
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      const isLight = document.body.classList.contains('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      themeBtn.setAttribute('aria-pressed', String(isLight));
+    });
 
-        <div class="card">
-            <h3>Instagram</h3>
-            <a href="https://instagram.com/ws_guizinsx" target="_blank">Acessar</a>
-        </div>
+    // Modal for project descriptions
+    const modalBack = document.getElementById('modalBack');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    document.querySelectorAll('[data-modal-title]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const t = e.currentTarget.getAttribute('data-modal-title') || 'Projeto';
+        const d = e.currentTarget.getAttribute('data-modal-desc') || 'Descrição não disponível.';
+        modalTitle.textContent = t;
+        modalDesc.textContent = d;
+        modalBack.style.display = 'grid';
+        modalBack.setAttribute('aria-hidden', 'false');
+        // set focus to close button for accessibility
+        document.getElementById('modalClose').focus();
+      });
+    });
+    function closeModal(){
+      modalBack.style.display = 'none';
+      modalBack.setAttribute('aria-hidden','true');
+    }
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    document.getElementById('modalClose2').addEventListener('click', closeModal);
+    modalBack.addEventListener('click', (e)=>{ if(e.target === modalBack) closeModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
 
-        <div class="card">
-            <h3>GitHub</h3>
-            <a href="https://github.com" target="_blank">Acessar</a>
-        </div>
+    // Contact form: fallback copy email and friendly submit handler
+    const contactForm = document.getElementById('contactForm');
+    const copyMail = document.getElementById('copyMail');
+    copyMail.addEventListener('click', () => {
+      const email = 'SEU_EMAIL_AQUI';
+      navigator.clipboard?.writeText(email).then(()=> {
+        copyMail.textContent = 'Copiado!';
+        setTimeout(()=> copyMail.textContent = 'Copiar email', 1600);
+      }).catch(()=> {
+        alert('Copie manualmente: ' + email);
+      });
+    });
 
-    </div>
+    // When user submits form, open mailto (works on most clients)
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value || 'Contato');
+      const message = encodeURIComponent(document.getElementById('message').value || '');
+      const email = 'guiandradesilva08@gmail.com';
+      const subject = encodeURIComponent('Contato via Portfólio (' + name + ')');
+      const body = encodeURIComponent(message + "\n\n— " + (name || 'Sem nome'));
+      const mailto = `mailto:${email}?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+    });
 
-</div>
-
-<footer>
-    © 2025 • Portfólio de Guilherme
-</footer>
+    // small accessibility: ensure keyboard focus styles
+    document.addEventListener('keyup', (e) => {
+      if(e.key === 'Tab') document.body.classList.add('show-focus');
+    }, {once:true});
+  </script>
 
 </body>
 </html>

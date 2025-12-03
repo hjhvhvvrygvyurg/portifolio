@@ -1,21 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Portfólio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio • Guilherme</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f2f2f2;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #4a6cf7;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .projects, .social {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .card a {
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            background: #4a6cf7;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            background: #2f4ddb;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
+
 </head>
+
 <body>
-  <h1>Meu Portfólio</h1>
-  <p>Olá! Sou Guilherme e este é meu portfólio para a disciplina de Matemática 2.</p>
 
-  <h2>Projetos</h2>
-  <button onclick="window.open('https://github.com/SEU_USUARIO/projeto1')">Projeto 1</button>
-  <button onclick="window.open('https://github.com/SEU_USUARIO/projeto2')">Projeto 2</button>
+<header>
+    <h1>Meu Portfólio — Guilherme</h1>
+    <p>Trabalho para a disciplina de Matemática 2 (Programação)</p>
+</header>
 
-  <h2>Minhas Redes</h2>
-  <a href="https://instagram.com">Instagram</a><br>
-  <a href="https://github.com">GitHub</a>
+<div class="container">
+
+    <h2>Projetos</h2>
+
+    <div class="projects">
+
+        <div class="card">
+            <h3>Projeto 1</h3>
+            <p>Descrição rápida do projeto.</p>
+            <a href="#">Ver projeto</a>
+        </div>
+
+        <div class="card">
+            <h3>Projeto 2</h3>
+            <p>Descrição rápida do projeto.</p>
+            <a href="#">Ver projeto</a>
+        </div>
+
+        <div class="card">
+            <h3>Projeto 3</h3>
+            <p>Descrição rápida do projeto.</p>
+            <a href="#">Ver projeto</a>
+        </div>
+
+    </div>
+
+    <h2>Minhas Redes</h2>
+
+    <div class="social">
+
+        <div class="card">
+            <h3>Instagram</h3>
+            <a href="https://instagram.com" target="_blank">Acessar</a>
+        </div>
+
+        <div class="card">
+            <h3>GitHub</h3>
+            <a href="https://github.com" target="_blank">Acessar</a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2025 • Portfólio de Guilherme
+</footer>
 
 </body>
 </html>
